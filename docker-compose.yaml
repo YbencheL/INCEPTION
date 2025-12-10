@@ -16,12 +16,29 @@ services:
       - ./web:/var/www/html
     networks:
       inception:
+    environment:
+      - WORDPRESS_DB_NAME=${DB_NAME}
+      - WORDPRESS_DB_USER=${DB_USER}
+      - WORDPRESS_DB_PASSWORD=${DB_PASSWORD}
+      - WORDPRESS_DB_HOST=${DB_HOST}
+      - WP_SITE_URL=${DBN_URL}
+      - WP_SITE_TITLE=${DBN_TITLE}
+      - WP_ADMIN_USER=${DBN_AUSER}
+      - WP_ADMIN_PASS=${DBN_APASS}
+      - WP_ADMIN_EMAIL=${DBN_AEMAIL}
+    depends_on:
+      - mariadb
   mariadb:
     build: requirements/mariadb/.
     container_name: mariadb
     volumes:
       - ./database:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
     networks:
       inception:
+
 networks:
     inception:
