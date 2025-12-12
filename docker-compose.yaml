@@ -26,17 +26,11 @@ services:
       - WP_ADMIN_USER=${DBN_AUSER}
       - WP_ADMIN_PASS=${DBN_APASS}
       - WP_ADMIN_EMAIL=${DBN_AEMAIL}
-    depends_on:
-      - mariadb
   mariadb:
     build: requirements/mariadb/.
     container_name: mariadb
     volumes:
       - ./database:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=${DB_NAME}
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
     networks:
       inception:
 
