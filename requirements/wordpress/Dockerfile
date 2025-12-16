@@ -1,0 +1,24 @@
+FROM debian:trixie
+
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y php8.4 php-fpm php-mysql mariadb-client wget
+
+RUN wget https://wordpress.org/wordpress-6.9.tar.gz -P /var/www
+
+RUN cd /var/www && tar -xzf wordpress-6.9.tar.gz && rm wordpress-6.9.tar.gz
+
+RUN	chown -R root:root /var/www/wordpress
+
+COPY conf/www.conf /etc/php/8.4/fpm/pool.d/.
+
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+RUN chmod +x wp-cli.phar
+
+RUN mv wp-cli.phar /usr/local/bin/wp
+
+COPY conf/script.sh /
+
+RUN chmod +x script.sh
+
+CMD [ "/script.sh" ]

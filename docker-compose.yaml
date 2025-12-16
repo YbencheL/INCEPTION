@@ -5,6 +5,45 @@ services:
     ports:
       - 443:443
     container_name: nginx
+    networks:
+      inception:
+    depends_on:
+      - wordpress
+    volumes:
+      - wordpress:/var/www/wordpress
   mariadb:
     build: requirements/mariadb/.
     container_name: mariadb
+    env_file:
+      - .env
+    networks:
+      inception:
+    volumes:
+      - mariadb:/var/lib/mysql
+  wordpress:
+    build: requirements/wordpress/.
+    container_name: wordpress
+    env_file:
+      - .env
+    depends_on:
+      - mariadb
+    networks:
+      inception:
+    volumes:
+      - wordpress:/var/www/wordpress
+
+networks:
+  inception:
+volumes:
+  wordpress:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/ybenchel/data/wordpress'
+  mariadb:
+    driver: local
+    driver_opts:
+      type: 'none' 
+      o: 'bind'									
+      device: '/home/ybenchel/data/mariadb'	
