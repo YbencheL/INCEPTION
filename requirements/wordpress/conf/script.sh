@@ -3,9 +3,7 @@
 pkill php-fpm8.4
 
 # Wait until DB is ready
-until mysql -h mariadb -u$MYSQL_USER -p$MYSQL_PASSWORD -e "SHOW DATABASES;" >/dev/null 2>&1; do
-    sleep 1
-done
+sleep 1
 
 if [ ! -f /var/www/wordpress/wp-load.php ]; then
     wp core download --allow-root --path='/var/www/wordpress'
