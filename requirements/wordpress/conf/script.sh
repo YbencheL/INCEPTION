@@ -1,12 +1,15 @@
 #!/bin/bash
 
-pkill php-fpm8.4
-
 # Wait until DB is ready
 sleep 1
 
 if [ ! -f /var/www/wordpress/wp-load.php ]; then
     wp core download --allow-root --path='/var/www/wordpress'
+else
+{
+    rm -rf /var/www/wordpress/*
+    wp core download --allow-root --path='/var/www/wordpress'
+}
 fi
 
 wp config create --allow-root \

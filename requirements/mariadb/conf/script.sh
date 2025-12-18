@@ -4,9 +4,8 @@
 mkdir -p /run/mysqld
 chown -R mysql:mysql /run/mysqld
 
-# 2. Start MariaDB in background
-mariadbd --skip-networking=0 --socket=/run/mysqld/mysqld.sock &
-DB_PID=$!
+# 2. Start MariaDB
+mariadbd 
 
 mysql -u root -p"$MYSQL_ROOT_PASSWORD" <<-EOF
 CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
@@ -16,5 +15,3 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';
 FLUSH PRIVILEGES;
 EOF
 
-# 5. foreground
-wait $DB_PID
