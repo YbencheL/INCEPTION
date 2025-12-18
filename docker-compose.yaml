@@ -11,6 +11,7 @@ services:
       - wordpress
     volumes:
       - wordpress:/var/www/wordpress
+    restart: always
   mariadb:
     build: requirements/mariadb/.
     container_name: mariadb
@@ -20,6 +21,7 @@ services:
       inception:
     volumes:
       - mariadb:/var/lib/mysql
+    restart: always
   wordpress:
     build: requirements/wordpress/.
     container_name: wordpress
@@ -31,6 +33,20 @@ services:
       inception:
     volumes:
       - wordpress:/var/www/wordpress
+    restart: always
+  ftp:
+    build: requirements/bonus/ftp/.
+    container_name: ftp
+    ports:
+      - 21:21
+      - 20:20
+      - 10000-10100:10000-10100
+    env_file:
+      - .env
+    networks:
+      inception:
+    volumes:
+      - wordpress:/home/ybenchel/ftp
 
 networks:
   inception:

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Wait until DB is ready
 sleep 1
 
