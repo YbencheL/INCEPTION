@@ -62,6 +62,14 @@ services:
     networks:
       inception:
     restart: always
+  glances:
+    build: requirements/bonus/glances/.
+    container_name: glances
+    ports:
+      - 61208:61208
+    networks:
+      inception:
+    restart: always
 
 networks:
   inception:
