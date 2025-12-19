@@ -47,6 +47,13 @@ services:
       inception:
     volumes:
       - wordpress:/home/ybenchel/ftp
+    restart: always
+  redis:
+    build: requirements/bonus/redis/.
+    container_name: redis
+    networks:
+      inception:
+    restart: always
 
 networks:
   inception:
