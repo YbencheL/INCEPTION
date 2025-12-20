@@ -57,18 +57,26 @@ services:
   adminer:
     build: requirements/bonus/adminer/.
     container_name: adminer
-    ports:
-      - "8080:80"
     networks:
       inception:
+    ports:
+      - 8080:80
     restart: always
   glances:
     build: requirements/bonus/glances/.
     container_name: glances
-    ports:
-      - 61208:61208
     networks:
       inception:
+    expose:
+      - 61208
+    restart: always
+  website:
+    build: requirements/bonus/website/.
+    container_name: website
+    networks:
+      inception:
+    expose:
+      - 80
     restart: always
 
 networks:
