@@ -46,7 +46,7 @@ services:
     networks:
       inception:
     volumes:
-      - wordpress:/home/ybenchel/ftp
+      - wordpress:/home/ybenchel/ftp:rx
     restart: always
   redis:
     build: ./requirements/bonus/redis/.
