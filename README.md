@@ -10,10 +10,16 @@ to docker compose to PID 1 and containers as a concept.
 Instructions:
 
 The starting process is very straight forward, Just as in previous projects just use make in this sequence:
+
 1. To build the containers and run them you can type the command "make up".
+
 2. To stop all containers for this environment run "make stop" or "make down" to stop and removed them.
+
 3. To run containers that you stopped using make stop just run "make start".
+
 4. To check the status of all running containers just run "make status".
+
+5. To check the logs file just run "make logs".
 
 Resources:
 
@@ -25,17 +31,20 @@ For the resources i used for this project these are a few of them, Since i didn'
 Project description:
 
     1. Virtual Machines vs Docker:
-    First, of course, the difference lies in the fact that Docker is a tool designed to allow us to build, deploy, and run applications in an isolated space.
-    Unlike virtual machines, which are more than a tool, they are software made to virtualize everything an OS needs to run, meaning virtualizing the hardware that the OS is going to use.
+
+    First, of-course the difference lies in the fact that Docker is a tool designed to allow us to build, deploy, and run applications in an isolated space, Unlike virtual machines which are more than a tool, they are software made to virtualize everything an OS needs to run, meaning virtualizing the hardware that the OS is going to use.
     This is done with a hypervisor, which manages the hardware needed for all virtual machines to run in their own isolated space.
-    Unlike containers, such as those in Docker, which need an existing OS to run, they are lightweight and only use the bare minimum from the kernel while containing all the dependencies and code the application needs to run.
+    Unlike containers, such as in Docker containers, which need an existing OS to run, containers are lightweight and only use the bare minimum from the kernel while containing all the dependencies and code the application needs to run.
     
     2. Secrets vs Environment Variables:
-    The main difference is that secrets are designed for sensitive data, such as passwords, because they encrypt data at rest and in transit, unlike environment variables, which are intended for non-sensitive data.
+
+    The main difference is that secrets are designed for sensitive data, such as passwords because they encrypt data, unlike environment variables, which are intended for non-sensitive data.
 
     3.  Docker Network vs Host Network:
-    Docker network (Bridge) is an isolated network requiring port mapping, while the host network makes containers share the hosts network directly therefore reducing isolation.
+
+    Docker network (Bridge) is an isolated network requiring port mapping, while the host network makes containers share the hosts network directly.
 
     4. Docker Volumes vs Bind Mounts:
+
     The main deference is that bind mounts use existing volumes on the host machine to store data, unlike docker volumes which use pre-made default docker paths on the host like /var/lib/docker/volumes/ to store data.
 

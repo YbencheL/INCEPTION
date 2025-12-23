@@ -3,10 +3,16 @@ This file is a user documentation made to make it easier for a user to understan
 First of all, we gonna start by explaining what are the services provided here, the main 3 here are mariadb nginx and wordpress, your gonna find all of them inside the requirements folder that is inside the srcs folder, so as you probably noticed by now these 3 service are made to run a wordpress website with our own mariadb databases on our configured nginx webserv so by the end of it you gonna be able to configure all this 3 parts and access a admin user page in wordpress to have more control of it all, plus in the bonus side we have another 4 additional servers, ftp for file transfer (i use filezilla to transfer files from the container to our host machine and vise versa), redis which is used for caching web pages, reducing load on servers and improving page loading times, glances which is like an htop but has a web interface, adminer which is a web interface used for managing databases easily, and another added in the bonus, a simple webpage that i host in the same domain as the wordpress one.
 
 Now lets talk about how to run the project, were gonna use makefile for that first:
+
 1. To build the containers and run them you can type the command "make up".
+
 2. To stop all containers for this environment run "make stop" or "make down" to stop and removed them.
+
 3. To run containers that you stopped using make stop just run "make start".
+
 4. To check the status of all running containers just run "make status".
+
+5. To check the logs file just run "make logs".
 
 
 Next were gonna talk about "Accessing the website and the administration panel":
