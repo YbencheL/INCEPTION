@@ -10,7 +10,7 @@ start:
 	docker compose -f ./srcs/docker-compose.yml start
 
 status:
-	docker ps
+	docker compose -f ./srcs/docker-compose.yml ps
 
 logs:
 	docker compose -f ./srcs/docker-compose.yml logs

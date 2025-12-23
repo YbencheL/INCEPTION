@@ -12,4 +12,4 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+CMD [ "nginx", "-g", "daemon off;" ]
