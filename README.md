@@ -33,6 +33,9 @@ Project description:
     2. Secrets vs Environment Variables:
     The main difference is that secrets are designed for sensitive data, such as passwords, because they encrypt data at rest and in transit, unlike environment variables, which are intended for non-sensitive data.
 
-    3.  Docker Network vs Host Network: (lol)
+    3.  Docker Network vs Host Network:
     Docker network (Bridge) is an isolated network requiring port mapping, while the host network makes containers share the hosts network directly therefore reducing isolation.
+
+    4. Docker Volumes vs Bind Mounts:
+    The main deference is that bind mounts use existing volumes on the host machine to store data, unlike docker volumes which use pre-made default docker paths on the host like /var/lib/docker/volumes/ to store data.
 

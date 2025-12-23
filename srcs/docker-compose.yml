@@ -13,7 +13,7 @@ services:
       - wordpress:/var/www/wordpress
     restart: always
   mariadb:
-    build: requirements/mariadb/.
+    build: ./requirements/mariadb/.
     container_name: mariadb
     env_file:
       - .env
@@ -23,7 +23,7 @@ services:
       - mariadb:/var/lib/mysql
     restart: always
   wordpress:
-    build: requirements/wordpress/.
+    build: ./requirements/wordpress/.
     container_name: wordpress
     env_file:
       - .env
@@ -35,7 +35,7 @@ services:
       - wordpress:/var/www/wordpress
     restart: always
   ftp:
-    build: requirements/bonus/ftp/.
+    build: ./requirements/bonus/ftp/.
     container_name: ftp
     ports:
       - 21:21
@@ -49,13 +49,13 @@ services:
       - wordpress:/home/ybenchel/ftp
     restart: always
   redis:
-    build: requirements/bonus/redis/.
+    build: ./requirements/bonus/redis/.
     container_name: redis
     networks:
       inception:
     restart: always
   adminer:
-    build: requirements/bonus/adminer/.
+    build: ./requirements/bonus/adminer/.
     container_name: adminer
     networks:
       inception:
@@ -63,7 +63,7 @@ services:
       - 8080:80
     restart: always
   glances:
-    build: requirements/bonus/glances/.
+    build: ./requirements/bonus/glances/.
     container_name: glances
     networks:
       inception:
@@ -71,7 +71,7 @@ services:
       - 61208
     restart: always
   website:
-    build: requirements/bonus/website/.
+    build: ./requirements/bonus/website/.
     container_name: website
     networks:
       inception:
