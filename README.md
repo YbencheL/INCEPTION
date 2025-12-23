@@ -11,16 +11,16 @@ Instructions:
 
 The starting process is very straight forward, Just as in previous projects just use make in this sequence:
 1. To build the containers and run them you can type the command "make up".
-2. To stop all containers for this envirement run "make stop" or "make down" to stop and removed them.
-3. To run containers that you stoped using make stop just run "make start".
+2. To stop all containers for this environment run "make stop" or "make down" to stop and removed them.
+3. To run containers that you stopped using make stop just run "make start".
 4. To check the status of all running containers just run "make status".
 
 Resources:
 
-For the resources i used for this project these are a few of them, Since i didnt rely on one or two things for the whole project:
+For the resources i used for this project these are a few of them, Since i didn't rely on one or two things for the whole project:
 
-1. This article right here byyoussef is very useful to get most of the needed infos to the start the project like what is a container what is docker etc https://medium.com/@imyzf/inception-3979046d90a0.
-2. This one is very helpful to learn containerization by the details the how and why of it, its very helpfull https://iximiuz.com/en/posts/container-learning-path/.
+1. This article right here by youssef is very useful to get most of the needed infos to the start the project like what is a container what is docker etc https://medium.com/@imyzf/inception-3979046d90a0.
+2. This one is very helpful to learn containerization by the details the how and why of it, its very helpful https://iximiuz.com/en/posts/container-learning-path/.
 
 Project description:
 
