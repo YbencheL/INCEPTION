@@ -28,4 +28,4 @@ think of it like a makefile helping us to run all the container in parallel and 
 
 you can access the local volumes in /home/ybenchel/data/, there you will find the local bind mount volumes, wordpress and mariadb, they have all thing the mariadb and wordpress container made, adding something there will effect the containers volume because they are mounted.
 
-we of-course mounted them using docker compose features and we specefied them to be of type local and the format be none (it can be nfs or fat or whatever), and we specified were the path will be.
+we of-course mounted them using docker compose features and we specified them to be of type local and the format be none (it can be nfs or fat or whatever), and we specified were the path will be.

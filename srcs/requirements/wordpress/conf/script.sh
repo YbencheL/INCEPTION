@@ -2,9 +2,6 @@
 
 set -e
 
-# Wait until DB is ready
-sleep 1
-
 if [ ! -f /var/www/wordpress/wp-load.php ]; then
     wp core download --allow-root --path='/var/www/wordpress'
 else
