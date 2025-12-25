@@ -27,4 +27,4 @@ wp core install \
     --allow-root \
     --path='/var/www/wordpress'
 
-php-fpm8.4 -F
+exec php-fpm8.4 -F
